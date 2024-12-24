@@ -4,7 +4,7 @@
 .venv/            # Ignores virtual environment directory named .venv
 .env/             # Ignores virtual environment directory named .env
 *.env             # Ignores all .env files (environment variables)
-
+*.venv
 # Jupyter Notebooks
 .ipynb_checkpoints/   # Ignores Jupyter notebook checkpoint files
 
