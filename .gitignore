@@ -1,0 +1,17 @@
+# Python
+**pycache**/      # Ignores Python cache directories anywhere in the project
+*.py[cod]         # Ignores Python compiled files (.pyc, .pyo, .pyd)
+.venv/            # Ignores virtual environment directory named .venv
+.env/             # Ignores virtual environment directory named .env
+*.env             # Ignores all .env files (environment variables)
+
+# Jupyter Notebooks
+.ipynb_checkpoints/   # Ignores Jupyter notebook checkpoint files
+
+# Data files
+data/            # Ignores any directory named 'data'
+*.csv            # Ignores all CSV files
+*.parquet        # Ignores all Parquet files
+
+# Others
+.DS_Store        # Ignores macOS system files
