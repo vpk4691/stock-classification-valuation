@@ -11,25 +11,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out the repository code
+      - name: Check out the repository code # Check out code: Pulls your repo into the CI runner.
+
         uses: actions/checkout@v2
 
-      - name: Set up Python
+      - name: Set up Python # Set up Python: Installs a specific Python version.
+
         uses: actions/setup-python@v2
         with:
-          python-version: "3.9"
+          python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install dependencies # Install dependencies: Installs from requirements.txt.
+
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Lint with flake8
+      - name: Lint with flake8  # Lint: Runs flake8 or black on your src folder.
+
         run: |
           pip install flake8
           flake8 src
 
-      - name: Test with pytest
+      - name: Test with pytest # Test: Runs your test suite (you’ll need a tests/ folder with test files).
         run: |
           pip install pytest
           pytest tests
+
