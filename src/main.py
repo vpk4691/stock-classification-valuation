@@ -72,6 +72,37 @@ def save_historical_data(collector: YahooFinanceCollector, symbol: str, base_fil
                 print(f"Saved {period} historical data for {symbol}")
         except Exception as e:
             print(f"Failed to save {period} historical data for {symbol}: {e}")
+            
+            
+            
+            
+# Uncomment the following after modifying the data_validator.py file
+# from data_validator import DataValidator
+
+# def validate_collected_data(data_dict):
+#     validator = DataValidator()
+#     validation_results = validator.run_all_validations(data_dict)
+    
+#     # Print validation results
+#     for data_type, results in validation_results.items():
+#         print(f"\nValidation results for {data_type}:")
+#         print(f"Status: {'✓' if results['status'] else '✗'}")
+#         if not results['status']:
+#             print("Issues found:", results['issues'])
+#         if 'freshness' in results:
+#             print("Freshness:", results['freshness']['message'])
+
+# # Use in your data collection process
+# collected_data = {
+#     'historical': historical_df,
+#     'balance_sheet': balance_sheet_df,
+#     # ... other data ...
+# }
+# validate_collected_data(collected_data)
+
+
+
+
 
 def main():
     # Initialize the collector

@@ -16,3 +16,5 @@ data/            # Ignores any directory named 'data'
 # Others
 .DS_Store        # Ignores macOS system files
 /data
+__pycache__/
+.vscode/
