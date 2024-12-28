@@ -5,15 +5,98 @@ stages:
     deps:
     - path: src/main.py
       hash: md5
-      md5: e94b787804a2a24adbaac5bd3f4f4647
-      size: 4965
+      md5: bd07ccadc7253e53b2ae38d0125dbe0e
+      size: 5736
     - path: src/yahoo_finance_collector.py
       hash: md5
       md5: 2c9ceb98ddb1f03613630bc980f09044
       size: 4299
     outs:
-    - path: data/
+    - path: data/raw/
       hash: md5
-      md5: 6146517df862c9b6aa14bd7d52324948.dir
-      size: 483546
+      md5: c00b2ab5e616c2b4c09d75384aba664e.dir
+      size: 483513
+      nfiles: 21
+  collect_and_validate:
+    cmd: python src/main.py
+    deps:
+    - path: src/data_validator.py
+      hash: md5
+      md5: 45c811e037369a8d114aa0ba7518f70b
+      size: 7798
+    - path: src/main.py
+      hash: md5
+      md5: 5cd3dbb75e97be6771efc63f4a322d70
+      size: 6721
+    - path: src/yahoo_finance_collector.py
+      hash: md5
+      md5: 2c9ceb98ddb1f03613630bc980f09044
+      size: 4299
+    outs:
+    - path: data/raw
+      hash: md5
+      md5: badaba7ded353b053f5338179099adbf.dir
+      size: 483531
+      nfiles: 21
+    - path: data/validation
+      hash: md5
+      md5: 733fc7f1d51207f84efb3168db4ab6c5.dir
+      size: 0
+      nfiles: 3
+  preprocess_data:
+    cmd: python src/run_preprocessing.py
+    deps:
+    - path: data/validation
+      hash: md5
+      md5: 733fc7f1d51207f84efb3168db4ab6c5.dir
+      size: 0
+      nfiles: 3
+    - path: src/data_preprocessing_module.py
+      hash: md5
+      md5: 01caf3e0cf59e35128922a752271be16
+      size: 7935
+    - path: src/run_preprocessing.py
+      hash: md5
+      md5: 4521a24247c1eafc2916de4377017156
+      size: 2141
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: d751713988987e9331980363e24189ce.dir
+      size: 0
+      nfiles: 0
+  collect_validate_process:
+    cmd: python src/main.py
+    deps:
+    - path: src/data_preprocessing_module.py
+      hash: md5
+      md5: 01caf3e0cf59e35128922a752271be16
+      size: 7935
+    - path: src/data_validator.py
+      hash: md5
+      md5: eb9df98d4ec0c8164824da0b1f4da23b
+      size: 7954
+    - path: src/main.py
+      hash: md5
+      md5: 8517d18fb8100b8dbefcedf00f4704f8
+      size: 9510
+    - path: src/yahoo_finance_collector.py
+      hash: md5
+      md5: 2c9ceb98ddb1f03613630bc980f09044
+      size: 4299
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: 40f12facbfae7f593411c496982c083e.dir
+      size: 358895
+      nfiles: 21
+    - path: data/raw
+      hash: md5
+      md5: 60526f373088d836bf75ae0aab2820c3.dir
+      size: 483515
+      nfiles: 21
+    - path: data/validation
+      hash: md5
+      md5: 21dd28cbc2594c8e40be410bb4685e0e.dir
+      size: 240981
       nfiles: 21

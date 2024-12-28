@@ -1,4 +1,7 @@
 # api_wrapper.py
+
+#### Example - to be refined later
+
 class StockDataAPI:
     def __init__(self, api_key=None):
         self.collector = YahooFinanceCollector()

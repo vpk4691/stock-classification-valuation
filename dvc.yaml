@@ -1,17 +1,12 @@
 stages:
-  collect_data:
+  collect_validate_process:
     cmd: python src/main.py
     deps:
       - src/main.py
       - src/yahoo_finance_collector.py
+      - src/data_validator.py
+      - src/data_preprocessing_module.py
     outs:
-      - data/
-
-## uncomment the following after validator is reviewed and updated:
-  # validate_data:
-  #   cmd: python src/data_validator.py
-  #   deps:
-  #     - data/
-  #     - src/data_validator.py
-  #   outs:
-  #     - data/validation_report.json
+      - data/raw
+      - data/validation
+      - data/processed
