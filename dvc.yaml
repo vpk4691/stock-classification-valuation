@@ -1,5 +1,6 @@
+# dvc.yaml
 stages:
-  collect_validate_process:
+  collect_data:
     cmd: python src/main.py
     deps:
       - src/main.py
@@ -7,6 +8,9 @@ stages:
       - src/data_validator.py
       - src/data_preprocessing_module.py
     outs:
-      - data/raw
-      - data/validation
-      - data/processed
+      - data/raw:
+          persist: true
+      - data/validation:
+          persist: true
+      - data/processed:
+          persist: true
