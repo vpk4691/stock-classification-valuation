@@ -17,21 +17,21 @@ stages:
       size: 9510
     - path: src/yahoo_finance_collector.py
       hash: md5
-      md5: 2c9ceb98ddb1f03613630bc980f09044
+      md5: c421d390298b415a830c2061ed025290
       size: 4299
     outs:
     - path: data/processed
       hash: md5
-      md5: b704b69f39a6285dc2186ab69a38384c.dir
-      size: 1076539
-      nfiles: 63
+      md5: b186735722f1e0fa71530c679f2d4ca5.dir
+      size: 1435324
+      nfiles: 84
     - path: data/raw
       hash: md5
-      md5: 5a0936f0bfda75daac6a532c1979f0a5.dir
-      size: 1450580
-      nfiles: 63
+      md5: 1371f003816384f0f72a10bad36d7040.dir
+      size: 1934122
+      nfiles: 84
     - path: data/validation
       hash: md5
-      md5: d9734a7a6faa45c9a2843172eecb7398.dir
-      size: 722978
-      nfiles: 63
+      md5: 858e848eea30486adbd0e1f1c92e1cbd.dir
+      size: 963986
+      nfiles: 84
