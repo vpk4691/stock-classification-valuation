@@ -46,7 +46,7 @@ class YahooFinanceCollector:
         try:
             ticker = self._fetch_data(symbol)
             print("Ticker: ", ticker)
-            print("/n")
+            print("\n")
             if not ticker:
                 return {}
 
